@@ -51,50 +51,9 @@ public class MainTest {
 
     @Test
     public static void checkEveningCourses() {
-        homePage.isShown().openEveningCourses();
-        boolean isPresent = isPresent();
-        assertTrue(isPresent);
-
+        assertTrue(homePage.isShown().openEveningCourses().isPresent());
     }
 
-    private static boolean isPresent() {
-        List<String> expectedCourse = new ArrayList<String>();
-        expectedCourse.add("Тестирование");
-        expectedCourse.add("Frontend development");
-        expectedCourse.add("JS development");
-        expectedCourse.add("Веб-дизайн");
-        expectedCourse.add("PHP");
-        expectedCourse.add("Программирование под IOS");
-        expectedCourse.add("Программирование под Android");
-        expectedCourse.add("Java programming");
-        expectedCourse.add("Python");
-        expectedCourse.add("Data Science/Machine Learning");
-        expectedCourse.add("C# /.NET development");
-        expectedCourse.add("C++");
-        expectedCourse.add("Game Development");
-        expectedCourse.add("DEVOPS");
-        expectedCourse.add("Digital Marketing");
-        expectedCourse.add("Управление персоналом");
-        expectedCourse.add("Управление проектами");
-        expectedCourse.add("Менеджмент");
-        expectedCourse.add("Кибербезопасность");
-        expectedCourse.add("Mobile development");
-        expectedCourse.add("Видеомонтаж");
-        expectedCourse.add("Cisco");
-        expectedCourse.add("Go development");
-
-
-        boolean isPresent = true;
-        List<WebElement> elements = driver.findElements(By.xpath("//h2"));
-        for (WebElement el : elements) {
-            String text = el.getText();
-            System.out.println(text);
-            if (!expectedCourse.contains(text)) {
-                isPresent = false;
-            }
-        }
-        return isPresent;
-    }
 
     @Test
     public static void mainTest() {
