@@ -1,6 +1,6 @@
 package test.java;
 
-import main.java.PO.CoursesPage;
+import main.java.PO.CoursePage;
 import main.java.PO.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ public class TestSetUp {
     static WebDriverWait wait;
     static WebElement preloader;
     static HomePage homePage;
-    static CoursesPage coursesPage;
+    static CoursePage coursesPage;
 
     @BeforeMethod
     public static void setUp() {
@@ -24,7 +24,7 @@ public class TestSetUp {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
-        coursesPage = new CoursesPage(driver);
+        coursesPage = new CoursePage(driver);
     }
 
     @AfterMethod
