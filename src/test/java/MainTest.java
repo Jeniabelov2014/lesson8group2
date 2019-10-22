@@ -43,10 +43,7 @@ public class MainTest {
                 /*.selectLanguage(lang);
                 .clicLogo()
                 .openCourses("C++");*/
-        coursePage.clickPay()
-                .checkIfLocationIsSelected("Берестейская");
-
-
+        coursePage.clickPay();
         assertTrue(coursePage.checkIfLocationIsSelected("Берестейская"));
         assertFalse(coursePage.checkIfLocationIsSelected("Позняки"));
         assertFalse(coursePage.checkIfLocationIsSelected("ВДНХ"));
@@ -55,6 +52,12 @@ public class MainTest {
     @Test
     public static void checkEveningCourses() {
         homePage.isShown().openEveningCourses();
+        boolean isPresent = isPresent();
+        assertTrue(isPresent);
+
+    }
+
+    private static boolean isPresent() {
         List<String> expectedCourse = new ArrayList<String>();
         expectedCourse.add("Тестирование");
         expectedCourse.add("Frontend development");
@@ -89,10 +92,8 @@ public class MainTest {
             if (!expectedCourse.contains(text)) {
                 isPresent = false;
             }
-
         }
-        assertTrue(isPresent);
-
+        return isPresent;
     }
 
     @Test
